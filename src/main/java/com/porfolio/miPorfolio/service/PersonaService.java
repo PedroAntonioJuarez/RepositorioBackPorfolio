@@ -20,15 +20,7 @@ public class PersonaService implements IPersonaService{
         return persoRepo.findAll();
     }
 
-    @Override
-    public void crearPersona(Persona per) {
-        persoRepo.save(per);
-    }
 
-    @Override
-    public void borrarPersona(Long id) {
-        persoRepo.deleteById(id);
-    }
 
     @Override
     public void actualizarPersona(Persona per) {

@@ -67,10 +67,6 @@ public class Controller {
      
     /*// Abajo "SOBRE MI" (editar, hay metodos que no se usaran*/
     
-    @PostMapping("/new/persona")
-     public void agregarPersona(@RequestBody Persona per){
-      persoServ.crearPersona(per);
-     };
      
      @GetMapping("/ver/personas")
      @ResponseBody
@@ -78,10 +74,6 @@ public class Controller {
         return persoServ.verPersona();
      };
      
-     @DeleteMapping ("/delete/{id}")
-     public void borrarPersona (@PathVariable Long id){
-         persoServ.borrarPersona(id);
-     };
      
      @PutMapping("actualizar/persona")
      public void actualizarPersona(@RequestBody Persona per){
