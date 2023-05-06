@@ -1,0 +1,14 @@
+com\porfolio\miPorfolio\model\Educacion.class
+com\porfolio\miPorfolio\repository\ExperienciaRepository.class
+com\porfolio\miPorfolio\service\ExperienciaService.class
+com\porfolio\miPorfolio\service\IPersonaService.class
+com\porfolio\miPorfolio\MiPorfolioApplication.class
+com\porfolio\miPorfolio\repository\EducacionRepository.class
+com\porfolio\miPorfolio\model\Experiencia.class
+com\porfolio\miPorfolio\service\EducacionService.class
+com\porfolio\miPorfolio\model\Persona.class
+com\porfolio\miPorfolio\service\IExperienciaService.class
+com\porfolio\miPorfolio\Controller\Controller.class
+com\porfolio\miPorfolio\service\IEducacionService.class
+com\porfolio\miPorfolio\repository\PersonaRepository.class
+com\porfolio\miPorfolio\service\PersonaService.class
