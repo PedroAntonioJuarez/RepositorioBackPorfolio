@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "https://porfolio-backend-p5jp.onrender.com")
+@CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
 public class Controller {
     
     
