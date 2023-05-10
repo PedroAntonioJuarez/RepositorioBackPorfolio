@@ -90,7 +90,7 @@ public class Controller {
    public List<Educacion> verEducacion(){
        return eduServ.verEducacion();
    }
-   
+   @ResponseBody
    @PostMapping("/agregar/educacion")
    public void agregarEducacion(@RequestBody Educacion edu){
        eduServ.crearEducacion(edu);
@@ -100,7 +100,7 @@ public class Controller {
    public void borrarEducacion(@PathVariable Long id){
        eduServ.borrarEducacion(id);
    }
-   
+   @ResponseBody
    @PutMapping("actualizar/educacion")
    public void actualizarEducacion(@RequestBody Educacion edu){
        eduServ.actualizarEducacion(edu);
