@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @RestController
@@ -105,4 +107,16 @@ public class Controller {
    public void actualizarEducacion(@RequestBody Educacion edu){
        eduServ.actualizarEducacion(edu);
    }
+   
+  
+   /* Esto de abajo es lo ultimo q implemente para ver si funciona el put, y el post*/
+   public class WebConfig implements WebMvcConfigurer {
+    
+        @Override
+        public void addCorsMappings(CorsRegistry registry) {
+            registry.addMapping("/**")
+                    .allowedOrigins("https://porfolio-frontend-pedro.web.app")
+                    .allowedMethods( "POST", "PUT");
+        }
+    }
 }
