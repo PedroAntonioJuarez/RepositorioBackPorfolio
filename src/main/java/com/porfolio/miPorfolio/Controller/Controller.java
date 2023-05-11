@@ -23,12 +23,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 
 @RestController
-@CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
+
 public class Controller {
     
     
@@ -43,41 +42,42 @@ public class Controller {
       
       //Aqui abajo esta lo de Experiencia
     
-    
+   @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app") 
   @PostMapping("/agregar/experiencia")
      public void agregarExperiencia(@RequestBody Experiencia exp){
       expeServ.crearExperiencia(exp);
      };
   
-
-       @GetMapping("/ver/experiencia")
+     @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
+     @GetMapping("/ver/experiencia")
      @ResponseBody
      public List<Experiencia> verExperiencias(){
         return expeServ.verExperiencia();
      };
-     
+    
+     @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
     @DeleteMapping ("/borrar/{id}")
      public void borrarExperiencia (@PathVariable Long id){
          expeServ.borrarExperiencia(id);
      };
      
-     
-     @PutMapping("actualizar/experiencia")
+     @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
+     @PutMapping("/actualizar/experiencia")
      public void actualizarExperiencia(@RequestBody Experiencia exp){
       expeServ.actualizarExperiencia(exp) ;}
      
      
     /*// Abajo "SOBRE MI" (editar, hay metodos que no se usaran*/
     
-     
+     @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
      @GetMapping("/ver/personas")
      @ResponseBody
      public List<Persona> verPersonas(){
         return persoServ.verPersona();
      };
      
-     
-     @PutMapping("actualizar/persona")
+     @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
+     @PutMapping("/actualizar/persona")
      public void actualizarPersona(@RequestBody Persona per){
          persoServ.actualizarPersona(per);
      }
@@ -86,37 +86,30 @@ public class Controller {
      
      // Aqui abajo esta todo lo de "Educacion 
      
-     
-   @GetMapping("ver/educacion")
+   @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")  
+   @GetMapping("/ver/educacion")
    @ResponseBody
    public List<Educacion> verEducacion(){
        return eduServ.verEducacion();
    }
+   
+   @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
    @ResponseBody
    @PostMapping("/agregar/educacion")
    public void agregarEducacion(@RequestBody Educacion edu){
        eduServ.crearEducacion(edu);
    }
- 
-   @DeleteMapping("borrarEdu/{id}")
+   @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
+   @DeleteMapping("/borrarEdu/{id}")
    public void borrarEducacion(@PathVariable Long id){
        eduServ.borrarEducacion(id);
    }
+   
+   @CrossOrigin(origins = "https://porfolio-frontend-pedro.web.app")
    @ResponseBody
-   @PutMapping("actualizar/educacion")
+   @PutMapping("/actualizar/educacion")
    public void actualizarEducacion(@RequestBody Educacion edu){
        eduServ.actualizarEducacion(edu);
    }
    
-  
-   /* Esto de abajo es lo ultimo q implemente para ver si funciona el put, y el post*/
-   public class WebConfig implements WebMvcConfigurer {
-    
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/**")
-                    .allowedOrigins("https://porfolio-frontend-pedro.web.app")
-                    .allowedMethods( "POST", "PUT");
-        }
-    }
 }
